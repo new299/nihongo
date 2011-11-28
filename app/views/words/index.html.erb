@@ -13,8 +13,8 @@
 <% @words.each do |word| %>
   <tr>
     <td><%= word.word %></td>
-    <td><%= word.definition %></td>
     <td><%= word.tags %></td>
+    <td><%= word.definition %></td>
     <td><%= link_to 'Show', word %></td>
     <td><%= link_to 'Edit', edit_word_path(word) %></td>
     <td><%= link_to 'Destroy', word, confirm: 'Are you sure?', method: :delete %></td>

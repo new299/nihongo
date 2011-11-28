@@ -14,14 +14,12 @@
   <div class="field">
     <%= f.label :word %><br />
     <%= f.text_field :word %>
+    <%= f.label :tags %>
+    <%= f.text_field :tags %>
   </div>
   <div class="field">
     <%= f.label :definition %><br />
-    <%= f.text_field :definition %>
-  </div>
-  <div class="field">
-    <%= f.label :tags %><br />
-    <%= f.text_field :tags %>
+    <%= f.text_area :definition,rows: 6  %>
   </div>
   <div class="actions">
     <%= f.submit %>
