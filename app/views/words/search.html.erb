@@ -1,0 +1,34 @@
+<h1>Search Results</h1>
+
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Definition</th>
+    <th>Tags</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @words.each do |word| %>
+  <tr>
+    <td><%= word.word %></td>
+    <td><%= word.tags %></td>
+    <td><%= word.definition %></td>
+    <td><%= link_to 'Show', word %></td>
+    <td><%= link_to 'Edit', edit_word_path(word) %></td>
+    <td><%= link_to 'Destroy', word, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Word', new_word_path %>
+
+<% if session[:user_id] %>
+<%= button_to 'Logout', logout_path, method: :delete %>
+<% end %>
+</div>
+<div id="main" >
+<%= yield %>
