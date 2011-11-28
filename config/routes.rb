@@ -7,7 +7,16 @@ Nihongo::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :words
+  #resources :words
+
+  # match ':controller(/:action(/:id))'  
+  resources :words do
+    collection do
+      get 'dosearch'
+      get 'search'
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

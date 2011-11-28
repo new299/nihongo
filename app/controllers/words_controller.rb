@@ -54,6 +54,25 @@ class WordsController < ApplicationController
     end
   end
 
+  # GET /words
+  # GET /words.json
+  def search
+    @words = Word.where("word = ?",params[:id]) #all #find(params[:id])
+
+    respond_to do |format|
+      format.html # search.html.erb
+      format.json { render json: @words }
+    end
+  end
+
+  def dosearch
+    @word = ""
+    respond_to do |format|
+      format.html 
+      format.json { render json: word }
+    end
+  end
+
   # PUT /words/1
   # PUT /words/1.json
   def update
